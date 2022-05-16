@@ -64,7 +64,7 @@ Parameters:
 
 ### `LiveCom.openVideoListScreen()`
 
-Opens screen with all your available videos. Technically it starts new activity, that will manage internal sdk fragments navigation. Video list fragment is one of them.
+Opens screen with all your available videos. Technically it starts new activity, that will manage internal sdk fragments navigation. Video list fragment is one of them. Note that this method may suspend thread if sdk configuration loading is not completed yet.
 
 Parameters:
 
@@ -72,7 +72,7 @@ Parameters:
 
 ### `LiveCom.openVideoById()`
 
-Opens player with passed streamId. Video list screen will be below player in navigation stack.
+Opens player with passed streamId. Video list screen will be below player in navigation stack.  Note that this method may suspend thread if sdk configuration loading is not completed yet.
 
 Parameters:
 

@@ -128,3 +128,17 @@ Both methods has arguments.
 # Caveats
 
 According to [Android Application lifecycle](https://developer.android.com/guide/components/activities/process-lifecycle) any process can be killed by the system. All static variables and other state will be lost when this happens. Developer can save some primitives, Serializable and Parcelable objects in Bundle. But `LiveCom.callback` is not one of them. That is why it can not be serialized. And that is why this variable separated from `LiveCom.configure()` method. It's sdk user (you - whoever is reading this now) responsibility to set this callback again after application recreated by system. Otherwise you will lose control over SDK navigation flow.
+
+# Google Maps SDK integration
+
+LiveCommerce SDK has Google Maps dependency. In order to open maps you need to select “Pickup” delivery type on checkout screen. Pickup bottom sheet appears and contains “Map” button. But if you want this button to be visible, в файле you should include such block in `AndroidManifest.xml`:
+```
+<meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="${MAPS_API_KEY}" />
+```
+Replace MAPS_API_KEY with key you received in Google Cloud Console (GCC) for Google Maps. How to get this key is written [here](https://developers.google.com/maps/documentation/android-sdk/get-api-key).  
+
+Api key could leek into Git if you will insert it directly into `AndroidManifest.xml`. This is not “true” way. Integration apps can use GitHub - [google/secrets-gradle-plugin: A Gradle plugin for providing your secrets to your Android project](https://github.com/google/secrets-gradle-plugin). to avoid this. We use this in our demo application (Makeupus).  
+Inside pickup bottom sheet we check if manifest contains correct block with meta-data. Map button becomes visible if correct meta-data exists. Button is hidden if correct meta-data not found.  
+Developer who integrates LiveCom sdk is responsible for this meta-data block in his application. If meta-data block is not added, then everything will work without Google Maps.

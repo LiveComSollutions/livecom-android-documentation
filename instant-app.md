@@ -52,7 +52,7 @@ class MyActivity : AppCompatActivity() {
         if (pathSegments.isEmpty()) {
             // there is no link in intent, do what you need
             lifecycleScope.launchWhenCreated {
-                  LiveCom.openVideoListScreen(this@SplashActivity)
+                  LiveCom.openVideoListScreen(this@MyActivity)
                   finish()
             }
             return
@@ -61,7 +61,7 @@ class MyActivity : AppCompatActivity() {
         val id = pathSegments.getOrNull(1) ?: kotlin.run {
             // there is no link in intent, do what you need
             lifecycleScope.launchWhenCreated {
-                  LiveCom.openVideoListScreen(this@SplashActivity)
+                  LiveCom.openVideoListScreen(this@MyActivity)
                   finish()
             }
             return
@@ -75,7 +75,7 @@ class MyActivity : AppCompatActivity() {
         } else {
             // there is no link in intent, do what you need
             lifecycleScope.launchWhenCreated {
-                  LiveCom.openVideoListScreen(this@SplashActivity)
+                  LiveCom.openVideoListScreen(this@MyActivity)
                   finish()
             }
         }

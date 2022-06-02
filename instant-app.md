@@ -1,6 +1,6 @@
 # How to integrate instant app
 
-Actually how to integrate instant app is fully described in [official documentation](https://developer.android.com/topic/google-play-instant/overview). This document describe only main instant app integration flow. If you see some undesirable behavior, or something does not work, please refer to official docs.  
+Actually instant app integration process is fully described in [official documentation](https://developer.android.com/topic/google-play-instant/overview). This document describe only main instant app integration flow. If you see some undesirable behavior, or something does not work, please refer to official docs.  
 
 We need to obey several conditions in order Instant App could work:
 

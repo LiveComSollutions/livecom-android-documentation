@@ -30,3 +30,43 @@ If “Try now“ do not appear you need to check whether Instant app enabled for
 5. Switch on “Upgrade web links”
 
 # How to connect Instant App with LiveCom SDK
+
+1. Implement Instant App settings described above.
+2. Integrate LiveCom SDK as written [here](https://github.com/LiveComSollutions/android-sdk-documentation)
+
+Be sure to sync your App Links with other platforms (for example iOS).
+Let's look at example:  
+1. We have links like `https://thesollution.com/s/{videoId}`
+2. `assetlinks.json` should look like https://thesollution.com/.well-known/assetlinks.json. Paste in it your application id and your SHA-256 fingerprints. Don't forget about Google Play Store signing key. It must be inserted here too.
+3. In your Activity, that starts on App Link fetch, parse link and extract video id:
+```kotlin
+class MyActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val link = data?.link ?: return
+        
+        // https://thesollution.com/s/{videoId}
+        
+        val pathSegments = link.pathSegments
+        if (pathSegments.isEmpty()) {
+            // there is no link in intent, do what you need
+            return
+        }
+
+        val id = pathSegments.getOrNull(1) ?: kotlin.run {
+            // there is no link in intent, do what you need
+            return
+        }
+
+        if (pathSegments[0] == "s") {
+            lifecycleScope.launchWhenCreated {
+                LiveCom.openVideoById(this@MyActivity, streamId = id)
+                finish()
+            }
+        } else {
+            // there is no link in intent, do what you need
+        }
+    }
+}
+```

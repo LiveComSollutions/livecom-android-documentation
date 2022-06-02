@@ -44,7 +44,7 @@ class MyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val link = data?.link ?: return
+        val link = intent.data ?: return // there is no link in intent, do what you need
         
         // https://thesollution.com/s/{videoId}
         

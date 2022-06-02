@@ -82,3 +82,5 @@ class MyActivity : AppCompatActivity() {
     }
 }
 ```
+
+### Example Instant App project can be found [here](https://github.com/LiveComSollutions/InstantAppExample)

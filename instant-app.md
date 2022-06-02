@@ -16,6 +16,10 @@ We need to obey several conditions in order Instant App could work:
       android:value="https://your_url.here" />
 ```
 
+You must upload Instant App in separate release type in Play Store. In order to create this type go to:
+Play console -> Tap your application -> Setup -> Advanced Settings -> Release Types -> Add Release Type -> Google Play Instant
+<img width="1305" alt="Play_Store_release" src="https://user-images.githubusercontent.com/102226507/171581841-9052d8b1-1352-4294-8f81-012d6a6974eb.png">
+
 It takes up to three days after all conditions fulfilled Google robot to scan `assetlinks.json` file on your web domain. You can read about `assetlinks.json` from links in point 4 above. Also at this period Google finds that we have Instant App and “Try now” button appears on our application page in Play Store. Direct app links to our application (even if it not installed) should start to work as soon as this button appears.  
 
 If “Try now“ do not appear you need to check whether Instant app enabled for your Google account. Steps are:

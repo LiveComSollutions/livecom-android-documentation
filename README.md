@@ -38,17 +38,12 @@ All code samples in this document presented using kotlin language (kotlin DSL fo
    ```
 
    Call this method as soon as possible. Because it needs time to loads some sdk configuration from network. Methods and parameters described [further](#livecom-methods-and-parameters)
-4. To open screen with video list, call:
+4. To open sdk start screen call:
 
    ```kotlin
-   LiveCom.openVideoListScreen(activity: Activity)
+   LiveCom.openSdkScreen(entranceCommand: SdkEntrance)
    ```
-
-   To open exact video immediate, call:
-
-   ```kotlin
-   LiveCom.openVideoById(activity: Activity, streamId: String)
-   ```
+   More about this method read below.
 
 # LiveCom methods and parameters
 
@@ -62,22 +57,31 @@ Parameters:
 * `sdkToken: String` - your sdk token, received from company manager;
 * `shareDomain: String` - domain that will be used to generate links like: `https://$shareDomain/s/$videoId`. Share feature available on player screen and product screen;
 
-### `LiveCom.openVideoListScreen()`
+### `LiveCom.openSdkScreen()`
 
-Opens screen with all your available videos. Technically it starts new activity, that will manage internal sdk fragments navigation. Video list fragment is one of them. Note that this method may suspend thread if sdk configuration loading is not completed yet.
-
-Parameters:
-
-* `activity: Activity` - your current activity where you call this method.
-
-### `LiveCom.openVideoById()`
-
-Opens player with passed streamId. Video list screen will be below player in navigation stack.  Note that this method may suspend thread if sdk configuration loading is not completed yet.
+Opens screen depending on `entranceCommand` argument. Technically it starts new activity, that will manage internal sdk fragments navigation. Start screen can be video list or full screen player. Note that this method may suspend thread if sdk configuration loading is not completed yet.
 
 Parameters:
 
-* `activity: Activity` - your current activity where you call this method.
-* `streamId: String` - video id, that you want to open
+* `entranceCommand: SdkEntrance` - sealed class that tells what to open. 
+
+You can open sdk screen in three ways:
+   
+1. Open video list screen and open video player above video list immediate.
+2. Just open video list without video player
+3. Open video player without video list. In this case if you will navigate back on video player
+screen, you will exit sdk and will not see video list screen.  
+
+In order to open point 1 - use `SdkEntrance.OpenVideo` with correct `SdkEntrance.OpenVideo.streamId` and `SdkEntrance.OpenVideo.shouldOpenVideoList == true`. 
+In order to open point 2 - use `SdkEntrance.OpenVideoList`. 
+In order to open point 3 - use `SdkEntrance.OpenVideo` with correct `SdkEntrance.OpenVideo.streamId` and `SdkEntrance.OpenVideo.shouldOpenVideoList == false`. 
+
+Keep in mind, that if you entered sdk with `SdkEntrance.OpenVideo.shouldOpenVideoList == false`, you can not
+open video list screen. If you will call `SdkEntrance.OpenVideoList` after `SdkEntrance.OpenVideo` with `shouldOpenVideoList == false`
+nothing will happen.
+Also if you enter sdk with `SdkEntrance.OpenVideoList` and invoke `SdkEntrance.OpenVideo` after it, then `shouldOpenVideoList` will be
+ignored.
+Conclusion: you can change sdk entrance type only after you finish previous sdk session (e.g. close all screens and open it from scratch)
 
 # SDK exit points.
 

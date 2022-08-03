@@ -158,13 +158,23 @@ So how to change this properites? You need to create resources in your applicati
 
 | Parameter | Properties name                            | Default value                                       |
 |-----------|--------------------------------------------|-----------------------------------------------------|
-| Color     | shoppablevideo_brand_primary_fill_alpha15  | #260091FF - light #260091FF - night                 |
-| Color     | shoppablevideo_brand_primary               | #0091FF - light #0091FF - night                     |
-| Color     | shoppablevideo_brand_secondary             | #EF5DA8 - light #EF5DA8 - night                     |
-| Color     | shoppablevideo_gradient_start_color        | #FF0091FF - light #FF0091FF - night                 |
-| Color     | shoppablevideo_gradient_end_color          | #FF00D1FF - light #FF00D1FF - night                 |
+| Color     | shoppablevideo_brand_primary_fill_alpha15  | #260091FF - light and night                         |
+| Color     | shoppablevideo_brand_primary               | #0091FF - light and night                           |
+| Color     | shoppablevideo_brand_secondary             | #EF5DA8 - light and night                           |
+| Color     | shoppablevideo_gradient_start_color        | #FF0091FF - light and night                         |
+| Color     | shoppablevideo_gradient_end_color          | #FF00D1FF - light and night                         |
 | Dimension | shoppablevideo_buttons_small_corner_radius | 10dp                                                |
 | Dimension | shoppablevideo_buttons_big_corner_radius   | 15dp                                                |
 | Font      | shoppablevideo_bold_font.ttf               | https://fonts.google.com/specimen/Inter?query=inter |
 | Font      | shoppablevideo_regular_font.ttf            | https://fonts.google.com/specimen/Inter?query=inter |
 | Font      | shoppablevideo_semi_bold_font.ttf          | https://fonts.google.com/specimen/Inter?query=inter |
+
+For example to override color `shoppablevideo_brand_primary` you can add resource to your xml file where you colors:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <color name="shoppablevideo_brand_primary">#0091FF</color>
+</resources>
+```
+
+If you want to override fonts - create font resource folder and put your ttf file there with appropriate name (look at the table above):

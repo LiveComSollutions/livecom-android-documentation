@@ -6,6 +6,7 @@ All code samples in this document presented using kotlin language (kotlin DSL fo
 2. [LiveCom methods and parameters](#livecom-methods-and-parameters)
 3. [SDK exit points](#sdk-exit-points)
 4. [Caveats](#caveats)
+5. [Google Maps SDK integration](#google-maps-sdk-integration)
 
 # How to install
 
@@ -146,3 +147,23 @@ Replace MAPS_API_KEY with key you received in Google Cloud Console (GCC) for Goo
 Api key could leek into Git if you will insert it directly into `AndroidManifest.xml`. This is not “true” way. Integration apps can use GitHub - [google/secrets-gradle-plugin: A Gradle plugin for providing your secrets to your Android project](https://github.com/google/secrets-gradle-plugin). to avoid this. We use this in our demo application (Makeupus).  
 Inside pickup bottom sheet we check if manifest contains correct block with meta-data. Map button becomes visible if correct meta-data exists. Button is hidden if correct meta-data not found.  
 Developer who integrates LiveCom sdk is responsible for this meta-data block in his application. If meta-data block is not added, then everything will work without Google Maps.
+
+# Style customization
+SDK allows to customize some values. They are:
+1. Fonts. Three custom fonts could be provided - Regular, Bold and Semi-Bold.
+2. Some corners radius. There two dimensions that most UI elements uses - "small" and "big" corners radius.
+3. Some colors. Gradient start-end colors, brand colors. Both light and dark themes could be provided.
+
+So how to change this properites? You need to create resources in your application xml files named like in table below:  
+| Parameter | Properties name                            | Default value                                       | Used in |
+|-----------|--------------------------------------------|-----------------------------------------------------|---------|
+| Color     | shoppablevideo_brand_primary_fill_alpha15  | #260091FF - light #260091FF - night                 |         |
+| Color     | shoppablevideo_brand_primary               | #0091FF - light #0091FF - night                     |         |
+| Color     | shoppablevideo_brand_secondary             | #EF5DA8 - light #EF5DA8 - night                     |         |
+| Color     | shoppablevideo_gradient_start_color        | #FF0091FF - light #FF0091FF - night                 |         |
+| Color     | shoppablevideo_gradient_end_color          | #FF00D1FF - light #FF00D1FF - night                 |         |
+| Dimension | shoppablevideo_buttons_small_corner_radius | 10dp                                                |         |
+| Dimension | shoppablevideo_buttons_big_corner_radius   | 15dp                                                |         |
+| Font      | shoppablevideo_bold_font.ttf               | https://fonts.google.com/specimen/Inter?query=inter |         |
+| Font      | shoppablevideo_regular_font.ttf            | https://fonts.google.com/specimen/Inter?query=inter |         |
+| Font      | shoppablevideo_semi_bold_font.ttf          | https://fonts.google.com/specimen/Inter?query=inter |         |

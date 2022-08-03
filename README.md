@@ -7,6 +7,7 @@ All code samples in this document presented using kotlin language (kotlin DSL fo
 3. [SDK exit points](#sdk-exit-points)
 4. [Caveats](#caveats)
 5. [Google Maps SDK integration](#google-maps-sdk-integration)
+6. [Style customization](#style_customization)
 
 # How to install
 

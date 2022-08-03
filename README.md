@@ -154,16 +154,17 @@ SDK allows to customize some values. They are:
 2. Some corners radius. There two dimensions that most UI elements uses - "small" and "big" corners radius.
 3. Some colors. Gradient start-end colors, brand colors. Both light and dark themes could be provided.
 
-So how to change this properites? You need to create resources in your application xml files named like in table below:  
-| Parameter | Properties name                            | Default value                                       | Used in |
-|-----------|--------------------------------------------|-----------------------------------------------------|---------|
-| Color     | shoppablevideo_brand_primary_fill_alpha15  | #260091FF - light #260091FF - night                 |         |
-| Color     | shoppablevideo_brand_primary               | #0091FF - light #0091FF - night                     |         |
-| Color     | shoppablevideo_brand_secondary             | #EF5DA8 - light #EF5DA8 - night                     |         |
-| Color     | shoppablevideo_gradient_start_color        | #FF0091FF - light #FF0091FF - night                 |         |
-| Color     | shoppablevideo_gradient_end_color          | #FF00D1FF - light #FF00D1FF - night                 |         |
-| Dimension | shoppablevideo_buttons_small_corner_radius | 10dp                                                |         |
-| Dimension | shoppablevideo_buttons_big_corner_radius   | 15dp                                                |         |
-| Font      | shoppablevideo_bold_font.ttf               | https://fonts.google.com/specimen/Inter?query=inter |         |
-| Font      | shoppablevideo_regular_font.ttf            | https://fonts.google.com/specimen/Inter?query=inter |         |
-| Font      | shoppablevideo_semi_bold_font.ttf          | https://fonts.google.com/specimen/Inter?query=inter |         |
+So how to change this properites? You need to create resources in your application xml files named like in table below:
+
+| Parameter | Properties name                            | Default value                                       |
+|-----------|--------------------------------------------|-----------------------------------------------------|
+| Color     | shoppablevideo_brand_primary_fill_alpha15  | #260091FF - light #260091FF - night                 |
+| Color     | shoppablevideo_brand_primary               | #0091FF - light #0091FF - night                     |
+| Color     | shoppablevideo_brand_secondary             | #EF5DA8 - light #EF5DA8 - night                     |
+| Color     | shoppablevideo_gradient_start_color        | #FF0091FF - light #FF0091FF - night                 |
+| Color     | shoppablevideo_gradient_end_color          | #FF00D1FF - light #FF00D1FF - night                 |
+| Dimension | shoppablevideo_buttons_small_corner_radius | 10dp                                                |
+| Dimension | shoppablevideo_buttons_big_corner_radius   | 15dp                                                |
+| Font      | shoppablevideo_bold_font.ttf               | https://fonts.google.com/specimen/Inter?query=inter |
+| Font      | shoppablevideo_regular_font.ttf            | https://fonts.google.com/specimen/Inter?query=inter |
+| Font      | shoppablevideo_semi_bold_font.ttf          | https://fonts.google.com/specimen/Inter?query=inter |

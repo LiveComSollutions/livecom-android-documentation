@@ -31,3 +31,4 @@ For example, to override color `shoppablevideo_brand_primary` you can add resour
 ```
 
 If you want to override fonts - create font resource folder and put your `ttf` file there with appropriate name (look at the table above):
+![](fonts folder location.png)

@@ -1,3 +1,4 @@
+## LiveCom methods and parameters
 ### LiveCom.configure()
 
 This method remembers your sdk token and domain to generate a share link. Also, it downloads localization, images and some other configurations from sdk api in order to work correctly.

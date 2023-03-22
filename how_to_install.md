@@ -1,3 +1,5 @@
+## How to install SDK
+
 In your android project `settings.gradle` file add a repository (to browse repo click here):
 
 ```plaintext

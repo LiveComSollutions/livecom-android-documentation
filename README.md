@@ -10,3 +10,4 @@ Kotlin version used in sdk - 1.7.10.
 
 [1. How to install](how_to_install.md)  
 [2. SDK methods and parameters](methods_and_parameters.md)  
+[3. SDK exit points](sdk_exit_points.md)  

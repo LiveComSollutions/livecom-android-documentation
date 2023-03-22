@@ -14,3 +14,4 @@ Kotlin version used in sdk - 1.7.10.
 [4. Google maps integration](maps_integration.md)  
 [5. Instant app](instant-app.md)  
 [6. Possible integration errors and solutions](errors_sollutions.md)  
+[7. Style customization](style_customization.md)  

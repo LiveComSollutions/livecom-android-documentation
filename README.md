@@ -6,7 +6,9 @@ Minimum android sdk version - 21
 
 Compile sdk version - 33
 
-Kotlin version used in sdk - 1.7.10. 
+Kotlin version used in sdk - 1.7.10  
+
+Latest SDK version - 1.4.0  
 
 [1. How to install](how_to_install.md)  
 [2. SDK methods and parameters](methods_and_parameters.md)  

@@ -30,5 +30,5 @@ For example, to override color `shoppablevideo_brand_primary` you can add resour
 </resources>
 ```
 
-If you want to override fonts - create font resource folder and put your `ttf` file there with appropriate name (look at the table above):
-![](fonts folder location.png)
+If you want to override fonts - create font resource folder and put your `ttf` file there with appropriate name (look at the table above):   
+![fonts folder location](https://github.com/LiveComSollutions/android-sdk-documentation/blob/main/fonts%20folder%20location.png?raw=true)

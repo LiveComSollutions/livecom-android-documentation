@@ -13,3 +13,4 @@ Kotlin version used in sdk - 1.7.10.
 [3. SDK exit points](sdk_exit_points.md)  
 [4. Google maps integration](maps_integration.md)  
 [5. Instant app](instant-app.md)  
+[6. Possible integration errors and solutions](errors_sollutions.md)  

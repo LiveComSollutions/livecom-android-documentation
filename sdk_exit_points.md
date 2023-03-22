@@ -1,3 +1,5 @@
+## SDK Exit points
+
 > SDK starts its own activity when you call `LiveCom.openSdkScreen`. So, if you want to show some UI on top of SDK screens, you have two options:
 > 
 > 1.  Open new activity and handle your UI/navigation there

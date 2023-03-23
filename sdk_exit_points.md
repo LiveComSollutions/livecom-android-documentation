@@ -14,7 +14,7 @@ This is how the Callback interface is declared in the SDK:
 ```kotlin
 object LiveCom {
    
-   var callback: Callback = object : Callback {
+   var callback: Callback? = object : Callback {
         override fun openProductCardInsideSdk(productId: String): Boolean = true
 
         override fun openCheckoutInsideSdk(productsInCart: List<LiveComProductInCart>): Boolean =
@@ -48,7 +48,7 @@ object LiveCom {
 }
 ```
 
-Default `callback` implementation always returns `true` from both methods. This means that internal SDK Product and Checkout screens will be opened when needed. If your implementation of these methods returns `false` (from one or both methods), then the corresponding screen will not be shown. And it's your responsibility to show some screen.
+Default `callback` implementation always returns `true` from both methods. This means that internal SDK Product and Checkout screens will be opened when needed. If your implementation of these methods returns `false` (from one or both methods), then the corresponding screen will not be shown. And it's your responsibility to show some screen. Pay attention that `callback` field has nullable type. This is done in order you could prevent Activity context leak. For example if you start your activities inside this callback methods, you pass context in lambda expression to `callback` field. `LiveCom` - is object (singletone). It will keep your context whole application lifetime. Possibly much more then your Activity lifetime. Be sure to make this field `null` if your activity (passed to callback) is destroyed.
 
 Both methods have arguments.
 
